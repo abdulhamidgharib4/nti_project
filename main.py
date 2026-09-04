@@ -23,3 +23,16 @@ while True:
 print("Player 1 number:", player_1)
 print("Player 2 number:", player_2)
 
+
+
+# 1 - with re module 
+import re 
+def get_guess():
+    while True:
+        player_guess = input(" Enter your guess number : ")
+        if re.fullmatch(r'\d{4}',player_guess):
+            return int(player_guess)
+        else:
+            print("Please try agine ! ")
+
+print(get_guess())
