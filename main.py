@@ -30,7 +30,7 @@ import re
 def get_guess():
     while True:
         player_guess = input(" Enter your guess number : ")
-        if re.fullmatch(r'\d{4}',player_guess) and remove_same_digits(player_guess):
+        if re.fullmatch(r'\d{4}',player_guess) and not  remove_same_digits(player_guess):
             return int(player_guess)
         else:
             print("Please try agine ! ")
@@ -40,11 +40,11 @@ print(get_guess())
 
 
 # 2 - with isdigit()
-def get_guess_number():
-    while True:
-        player_guess = input(" Enter your guess number : ")
-        if len(player_guess) == 4 and player_guess.isdigit():
-            return int(player_guess)
-        else:
-           print("Please try agine ! ") 
-print(get_guess_number())
+# def get_guess_number():
+#     while True:
+#         player_guess = input(" Enter your guess number : ")
+#         if len(player_guess) == 4 and player_guess.isdigit():
+#             return int(player_guess)
+#         else:
+#            print("Please try agine ! ") 
+# print(get_guess_number())
