@@ -30,7 +30,7 @@ import re
 def get_guess():
     while True:
         player_guess = input(" Enter your guess number : ")
-        if re.fullmatch(r'\d{4}',player_guess):
+        if re.fullmatch(r'\d{4}',player_guess) and remove_same_digits(player_guess):
             return int(player_guess)
         else:
             print("Please try agine ! ")
