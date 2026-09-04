@@ -36,3 +36,15 @@ def get_guess():
             print("Please try agine ! ")
 
 print(get_guess())
+
+
+
+# 2 - with isdigit()
+def get_guess_number():
+    while True:
+        player_guess = input(" Enter your guess number : ")
+        if len(player_guess) == 4 and player_guess.isdigit():
+            return int(player_guess)
+        else:
+           print("Please try agine ! ") 
+print(get_guess_number())
