@@ -10,6 +10,15 @@ def get_guess():
         else:
             print("Please try agine ! ")
 
+def get_guess():
+    while True:
+        player_guess = input("Enter your guess number : ")
+        if re.fullmatch(r'\d{4}',player_guess) and not ts.remove_same_digits(player_guess):
+            return str(player_guess)
+        else:
+            print("Please try agine ! ")
+
+
 while True:
     player_1=str(random.randint(1000,9999))
     check_1=ts.remove_same_digits(player_1)

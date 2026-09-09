@@ -31,3 +31,4 @@ while True:
     print(f"\nyour guess is {player_guess} and the result is {stars} stars and {points} points")
     
     
+    
