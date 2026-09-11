@@ -1,0 +1,41 @@
+import random
+import re
+from tools import ts
+
+
+def get_guess():
+    while True:
+        player_guess = input("Enter your guess number : ")
+        if re.fullmatch(r'\d{4}',player_guess) and not ts.remove_same_digits(player_guess):
+            return str(player_guess)
+        else:
+            print("Please try agine ! ")
+
+
+while True:
+    player_1=str(random.randint(1000,9999))
+    check_1=ts.remove_same_digits(player_1)
+    player_2=str(random.randint(1000,9999)) 
+    check_2=ts.remove_same_digits(player_2)
+    if check_1==False and check_2==False:
+        break
+
+print("player 1 your number is : ",player_1)
+print("player 2 your number is : ",player_2)
+
+while True:
+    print("player 1 your ruond:")
+    player_1_guess =get_guess()
+    stars,points=ts.game_culc(player_1_guess,player_1)
+    if stars==4:
+        print("player 1 win the game !")
+        break
+    print(f"\nplayer 1 your guess is {player_1_guess} and the result is {stars} stars and {points} points\n")
+    print("player 2 your ruond:")
+    player_2_guess =get_guess()
+    stars,points=ts.game_culc(player_2_guess,player_2)
+    if stars==4:
+        print("player 2 win the game !")
+        break
+    print(f"\nplayer 2 your guess is {player_2_guess} and the result is {stars} stars and {points} points\n")
+    

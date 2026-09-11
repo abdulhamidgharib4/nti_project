@@ -1,0 +1,36 @@
+import random
+import re
+from tools import ts
+
+
+
+while True:
+    player = str(random.randint(1000,9999))
+    check = ts.remove_same_digits(player)
+    if check == False:
+        break
+
+
+def get_guess():
+    while True:
+        player_guess = input("Enter your guess number : ")
+        if re.fullmatch(r'\d{4}',player_guess) and not ts.remove_same_digits(player_guess):
+            return str(player_guess)
+        else:
+            print("Please try agine ! ")
+
+
+
+print("player your number is : ",player) 
+print(" you can start your round  !") 
+
+while True:
+    player_guess = get_guess()
+    stars,points = ts.game_culc(player_guess,player)
+    if stars == 4:
+        print("Congratulations , you win the game ! ")
+        break
+    print(f"\nyour guess is {player_guess} and the result is {stars} stars and {points} points")
+    
+    
+    
