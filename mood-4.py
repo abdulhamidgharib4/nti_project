@@ -70,10 +70,7 @@ while True:
 
     computer_guess = random.choice(possible_numbers)
 
-    stars, points = ts.game_culc(
-        computer_guess,
-        computer
-    )
+    stars, points = ts.game_culc(computer_guess,computer)
 
     print(
         f"computer guess is {computer_guess} "
@@ -90,10 +87,7 @@ while True:
 
     for number in possible_numbers:
 
-        test_stars, test_points = ts.game_culc(
-            computer_guess,
-            number
-        )
+        test_stars, test_points = ts.game_culc(computer_guess,number)
 
         if test_stars == stars and test_points == points:
             new_possible_numbers.append(number)
